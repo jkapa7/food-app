@@ -4,13 +4,11 @@ const { DataTypes } = require("sequelize");
 module.exports = (sequelize) => {
   // defino el modelo
   sequelize.define(
-    "diet_type",
+    "diet",
     {
       id: {
         type: DataTypes.UUID,
-        allowNull: false,
         defaultValue: DataTypes.UUIDV4,
-        unique: true,
         primaryKey: true,
       },
 

@@ -11,7 +11,6 @@ module.exports = (sequelize) => {
         allowNull: false,
         primaryKey: true,
         defaultValue: DataTypes.UUIDV4,
-        unique: true,
       },
 
       name: {
@@ -32,7 +31,7 @@ module.exports = (sequelize) => {
       health_score: {
         type: DataTypes.INTEGER,
         allowNull: false,
-        defaultValue: 0,
+        // defaultValue: 0,
       },
 
       step_by_step: {

@@ -1,6 +1,6 @@
 const axios = require("axios");
 const { API_KEY } = process.env;
-const { Diet_type } = require("../db");
+const { Diet } = require("../db");
 
 const getAllDietsController = async () => {
   //TRAERNOS TODAS LAS DIETAS DE LA API
@@ -22,15 +22,15 @@ const getAllDietsController = async () => {
   const dietsApi = removeDuplicateDiets(allDietsApi);
 
   dietsApi.forEach(async (diet) => {
-    const findInDb = await Diet_type.findOne({ where: { name: diet } });
+    const findInDb = await Diet.findOne({ where: { name: diet } });
     //Si no encuetra...
     if (!findInDb) {
       //Los crea todos en la DB
-      await Diet_type.create({ name: diet });
+      await Diet.create({ name: diet });
     }
   });
 
-  return await Diet_type.findAll();
+  return await Diet.findAll();
 };
 
 module.exports = getAllDietsController;

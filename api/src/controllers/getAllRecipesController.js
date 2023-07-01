@@ -22,7 +22,7 @@ const getAllRecipesController = async () => {
   const apiRecipesFiltered = apiRecipesData.map((recipe) => {
     return {
       id: recipe.id,
-      name: recipe.name,
+      name: recipe.title,
       image: recipe.image,
       summary: recipe.summary,
       step_by_step: recipe.analyzedInstructions[0]?.steps.map((steps) => {

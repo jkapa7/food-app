@@ -7,9 +7,9 @@ const recipesRouter = Router();
 
 //POST PARA CREAR RECIPE
 recipesRouter.post("/", postRecipeHandler);
-//GET PARA TRAER TODAS LAS RECIPES
+//GET PARA TRAER TODAS LAS RECIPES // O TRAERLAS POR NOMBRE
 recipesRouter.get("/", getAllRecipesHandler);
 //GET PARA TRAER LAS RECETAS POR ID
 recipesRouter.get("/:id", getRecipeByIdHandler);
-//GET PARA TRAER LAS RECETAS POR NOMBRE
+
 module.exports = recipesRouter;

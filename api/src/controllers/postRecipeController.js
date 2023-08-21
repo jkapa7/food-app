@@ -22,8 +22,10 @@ const postRecipeController = async (
     },
   });
 
+for
+
   if (dietDb) {
-    await newRecipe.addDiet(dietDb);
+    await newRecipe.addDiet(dietDb.name);
   } else {
     console.log(`Diet '${diet_type}' not found.`);
   }
